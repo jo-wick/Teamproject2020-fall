@@ -7,4 +7,4 @@
 <ol>
   누구의 db4free를 사용할지
   db4free sql문 작성  
-</ol>
+
