@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.team.table.ProductVO;
 
 @Controller
 @RequestMapping(value="/login")
@@ -47,7 +46,7 @@ public class UserController {
 		if(loginvo != null) {
 			System.out.println("로그인 성공!");
 			session.setAttribute("login", loginvo);
-			returnURL = "redirect:/board/list";
+			returnURL = "redirect:/home";
 		}
 		else {
 			System.out.println("로그인 실패!");

@@ -15,7 +15,6 @@ import com.team.table.ProductDAO;
 import com.team.table.ProductVO;
 
 @Controller
-@RequestMapping(value="/board")
 public class ProductController {
 
 	
@@ -23,23 +22,34 @@ public class ProductController {
 	ProductService productService;
 	
 	//	/board/list
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home(Model model) {
+		//model.addAttribute("list", productService.getProductList());
+		return "home";
+	}
+	@RequestMapping(value = "/ProductList", method = RequestMethod.GET)
 	public String productboardlist(Model model) {
-		model.addAttribute("list", productService.getProductList());
-		return "list";
+		//model.addAttribute("list", productService.getProductList());
+		return "ProductList";
 	}
-	@RequestMapping(value = "/add", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/ProductExpl", method = RequestMethod.GET)
+	public String productexpl(Model model) {
+		//model.addAttribute("list", productService.getProductList());
+		return "ProductExpl";
+	}
+	@RequestMapping(value = "/AddMember", method = RequestMethod.GET)
 	public String addproduct() {
-		return "addpostform";
+		return "AddMember";
 	}
-	@RequestMapping(value = "/addok", method = RequestMethod.POST)
+	@RequestMapping(value = "/AddMemberOk", method = RequestMethod.POST)
 	public String addPostOK(ProductVO vo) {
 		if(productService.insertProduct(vo) == 0) {
 			System.out.println("데이터 추가 실패");
 		}
 		else
 			System.out.println("데이터 추가 성공!!!");
-		return "redirect:list";
+		return "redirect:home";
 	}
 	@RequestMapping(value = "/editform/{id}", method = RequestMethod.GET)
 	public String editProduct(@PathVariable("id") int id, Model model) {

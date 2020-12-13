@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="stylesheet" href="/resources/css/member/login.css">
+<link rel="stylesheet" href="../resources/css/member/login.css">
 </head>
 <body>
 
@@ -15,11 +15,11 @@
 		<div class="logo_wrap">
 			<span>Cooking kitchen</span>
 		</div>
+	<form method="post" action="loginOk">
 		<div class="login_wrap"> 
 			<div class="id_wrap">
 					<div class="id_input_box">
 					<label>User ID: </label><input type='text' name='userid'/>
-					<input class="id_input">
 				</div>
 			</div>
 			<div class="pw_wrap">
@@ -28,10 +28,11 @@
 				</div>
 			</div>
 			<div class="login_button_wrap">
-				<input type="button" class="login_button" value="로그인">
+				<button type="submit" class="login_button">로그인</button>
+				
 			</div>			
 		</div>
-		
+	</form>
 		
 	</div>
 
